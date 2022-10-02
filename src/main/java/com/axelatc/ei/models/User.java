@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Setter
@@ -59,4 +60,7 @@ public class User {
 
     @ManyToOne
     private Role role;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Measure> measures;
 }
