@@ -9,6 +9,7 @@ import java.util.Set;
 
 
 @Entity
+@Table(name = "roles", schema = "shapp")
 @Setter
 @Getter
 @AllArgsConstructor

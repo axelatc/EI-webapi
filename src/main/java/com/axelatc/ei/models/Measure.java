@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 
 
 @Entity
+@Table(name = "measures", schema = "shapp")
 @Setter
 @Getter
 @AllArgsConstructor

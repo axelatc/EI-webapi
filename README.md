@@ -8,3 +8,9 @@
 - Open a terminal (cmd.exe) at the root of this directory
 - Run `mvn install` to install dependencies and run the tests
 - Run the included "EiApplication" Run Configuration in IntelliJ
+
+## TODO Technologies used
+
+## Memo
+
+MySQL 8.0.3 local env credentials: "root"/"test1234=", "shapp"/"test1234"

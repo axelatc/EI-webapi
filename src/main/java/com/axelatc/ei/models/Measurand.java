@@ -9,6 +9,7 @@ import java.util.Set;
 
 
 @Entity
+@Table(name = "measurands", schema = "shapp")
 @Setter
 @Getter
 @AllArgsConstructor

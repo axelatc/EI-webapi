@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
+@Table(name = "permissions", schema = "shapp")
 @Setter
 @Getter
 @AllArgsConstructor
