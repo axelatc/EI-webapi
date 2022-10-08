@@ -16,6 +16,11 @@ import java.util.Set;
 @Builder
 @ToString
 public class Permission {
+
+    public Permission(String label) {
+        this.label = label;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
