@@ -29,6 +29,10 @@ public class Role {
     @Size(min = 1, max = 2000)
     private String description;
 
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany
+    @JoinTable(
+            name = "roles_permissions",
+            joinColumns = @JoinColumn(name = "role_id"),
+            inverseJoinColumns = @JoinColumn(name = "permission_id"))
     private Set<Permission> permissions;
 }
