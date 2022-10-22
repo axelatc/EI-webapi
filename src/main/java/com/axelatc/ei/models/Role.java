@@ -21,6 +21,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(unique = true)
     @NotBlank
     @Size(min = 1, max = 100)
     private String label;

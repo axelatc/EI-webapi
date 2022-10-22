@@ -25,7 +25,7 @@ public class Permission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //TODO: add unique constraint
+    @Column(unique = true)
     @NotBlank
     @Size(min = 1, max = 100)
     private String label;

@@ -29,7 +29,7 @@ public class User {
     @Size(min = 1, max = 100)
     private String lastName;
 
-    //TODO: add unique constraint
+    @Column(unique = true)
     @NotBlank
     @Size(min = 1, max = 100)
     private String username;
@@ -47,7 +47,7 @@ public class User {
     @NotNull
     private Gender gender;
 
-    //TODO: add unique constraint
+    @Column(unique = true)
     @NotBlank
     @Size(min = 3, max = 254)
     @Email(regexp = "[\\w\\.-]*[a-zA-Z0-9_]@[\\w\\.-]*[a-zA-Z0-9]\\.[a-zA-Z][a-zA-Z\\.]*[a-zA-Z]")
