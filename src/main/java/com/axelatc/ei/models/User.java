@@ -50,7 +50,7 @@ public class User {
     @NotBlank
     @Size(min = 3, max = 254)
     @Email(regexp = "[\\w\\.-]*[a-zA-Z0-9_]@[\\w\\.-]*[a-zA-Z0-9]\\.[a-zA-Z][a-zA-Z\\.]*[a-zA-Z]")
-    private String emailAddress;
+    private String email;
 
     @NotNull
     @PastOrPresent
