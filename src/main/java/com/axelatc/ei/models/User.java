@@ -43,7 +43,6 @@ public class User {
     @PastOrPresent
     private LocalDate birthdate;
 
-    @Enumerated(EnumType.STRING)
     @NotNull
     private Gender gender;
 

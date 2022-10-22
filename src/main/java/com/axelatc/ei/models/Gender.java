@@ -1,13 +1,16 @@
 package com.axelatc.ei.models;
 
+import lombok.Getter;
+
+@Getter
 public enum Gender {
-    FEMININ("F"),
-    MASCULIN("M"),
-    AUTRE("O");
+    FEMALE("F"),
+    MALE("M"),
+    OTHER("O");
 
-    public final String label;
+    private final String code;
 
-    Gender(final String label) {
-        this.label = label;
+    Gender(String code) {
+        this.code = code;
     }
 }
