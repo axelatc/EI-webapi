@@ -8,5 +8,5 @@
         - [ ] All programmatically generation or hybrid, or just a sql script?
 - [x] make sur roles-perms schema suits Spring Security
 - [ ] Add AttributeConverter for Gender enum and Role name
-- [ ] create role hierarchy : https://www.baeldung.com/role-and-privilege-for-spring-security-registration
+- [x] create role hierarchy : https://www.baeldung.com/role-and-privilege-for-spring-security-registration
 - [x] add unique constraints
