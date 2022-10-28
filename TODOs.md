@@ -1,5 +1,10 @@
 # TODOs
 - [x] Add AttributeConverter for Gender enum => really necessary?
+- [x] Use permissions to authorize access on endpoints: hasAuthority, hasPermission, isAuthenticated
+- [x] transform all permissions to enums
+- [ ] change naming scheme for jpa generated constraints?
+- [ ] fit password jpa property to generated password hash constraints + separate it from clear text constraints
+- [ ] avoir send password in clear text? how to do that?
 
 ## Archives
 
