@@ -82,24 +82,34 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
 
     @Transactional
     Role createUserRole() {
-        Set<Permission> permissions = new HashSet<>(permissionRepository.saveAll(
-                ROLE_USER_PERMISSIONS.stream().map(permissionEnum -> new Permission(permissionEnum.toString())).collect(Collectors.toList())));
+        Set<Permission> permissions = createUserPermissions();
 
         Role roleUserToPersist = Role.builder().label("ROLE_USER").description("Rôle de l'utilisateur connecté").permissions(permissions).build();
         return roleRepository.save(roleUserToPersist);
     }
 
     @Transactional
+    Set<Permission> createUserPermissions() {
+        return new HashSet<>(permissionRepository.saveAll(
+                ROLE_USER_PERMISSIONS.stream().map(permissionEnum -> new Permission(permissionEnum.toString())).collect(Collectors.toList())));
+    }
+
+    @Transactional
     void createAdminRole() {
-        Set<Permission> adminPermissions = new HashSet<>(permissionRepository.saveAll(
-                ROLE_ADMIN_PERMISSIONS.stream()
-                        .map(permissionEnum -> new Permission(permissionEnum.toString()))
-                        .toList()
-        ));
+        Set<Permission> adminPermissions = createAdminPermissions();
         Optional<Role> userRole = roleRepository.findByLabel(RoleEnum.ROLE_USER.name());
         adminPermissions.addAll(userRole.get().getPermissions());
         Role roleAdminToPersist = Role.builder().label("ROLE_ADMIN").description("Rôle de l'administrateur").permissions(adminPermissions).build();
         roleRepository.save(roleAdminToPersist);
+    }
+
+    @Transactional
+    HashSet<Permission> createAdminPermissions() {
+        return new HashSet<>(permissionRepository.saveAll(
+                ROLE_ADMIN_PERMISSIONS.stream()
+                        .map(permissionEnum -> new Permission(permissionEnum.toString()))
+                        .toList()
+        ));
     }
 
     @Transactional
