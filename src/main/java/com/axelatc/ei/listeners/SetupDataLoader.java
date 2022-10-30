@@ -115,17 +115,17 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
     @Transactional
     void createUsers() {
         Optional<Role> roleAdmin = roleRepository.findByLabel(RoleEnum.ROLE_ADMIN.toString());
-        User admin1 = User.builder().firstName("Bugs").lastName("Bunny").username("admin_bugs").password(passwordEncoder.encode("test1234=")).birthdate(LocalDate.now()).gender(Gender.MALE).email("bugsbunny@example.com").creationDateTime(LocalDateTime.now()).isActive(true).role(roleAdmin.get()).build();
+        User admin1 = User.builder().firstName("Bugs").lastName("Bunny").username("admin_bugs").password(passwordEncoder.encode("Test1234@")).birthdate(LocalDate.now()).gender(Gender.MALE).email("bugsbunny@example.com").creationDateTime(LocalDateTime.now()).isActive(true).role(roleAdmin.get()).build();
         userRepository.save(admin1);
 
-        User admin2 = User.builder().firstName("Marvin").lastName("The Martian").username("admin_marvin").password(passwordEncoder.encode("test1234=")).birthdate(LocalDate.now()).gender(Gender.OTHER).email("marvinthemartian@example.com").creationDateTime(LocalDateTime.now()).isActive(true).role(roleAdmin.get()).build();
+        User admin2 = User.builder().firstName("Marvin").lastName("The Martian").username("admin_marvin").password(passwordEncoder.encode("Test1234@")).birthdate(LocalDate.now()).gender(Gender.OTHER).email("marvinthemartian@example.com").creationDateTime(LocalDateTime.now()).isActive(true).role(roleAdmin.get()).build();
         userRepository.save(admin2);
 
         Optional<Role> roleUser = roleRepository.findByLabel(RoleEnum.ROLE_USER.toString());
-        User user1 = User.builder().firstName("Daffy").lastName("Ducks").username("user_daffy").password(passwordEncoder.encode("test1234=")).birthdate(LocalDate.now()).gender(Gender.MALE).email("daffyducks@example.com").creationDateTime(LocalDateTime.now()).isActive(true).role(roleUser.get()).build();
+        User user1 = User.builder().firstName("Daffy").lastName("Ducks").username("user_daffy").password(passwordEncoder.encode("Test1234@")).birthdate(LocalDate.now()).gender(Gender.MALE).email("daffyducks@example.com").creationDateTime(LocalDateTime.now()).isActive(true).role(roleUser.get()).build();
         userRepository.save(user1);
 
-        User user2 = User.builder().firstName("Jessica").lastName("Rabbit").username("user_jessica").password(passwordEncoder.encode("test1234=")).birthdate(LocalDate.now()).gender(Gender.FEMALE).email("jessicarabbit@example.com").creationDateTime(LocalDateTime.now()).isActive(true).role(roleUser.get()).build();
+        User user2 = User.builder().firstName("Jessica").lastName("Rabbit").username("user_jessica").password(passwordEncoder.encode("Test1234@")).birthdate(LocalDate.now()).gender(Gender.FEMALE).email("jessicarabbit@example.com").creationDateTime(LocalDateTime.now()).isActive(true).role(roleUser.get()).build();
         userRepository.save(user2);
     }
 
